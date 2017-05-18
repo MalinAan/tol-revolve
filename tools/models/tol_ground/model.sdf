@@ -41,7 +41,7 @@
           <script>
             <uri>model://tol_ground/materials/scripts</uri>
             <uri>model://tol_ground/materials/textures</uri>
-            <name>Floor/Concrete1</name>
+            <name>Floor/Tiles</name>
           </script>
         </material>
       </visual>

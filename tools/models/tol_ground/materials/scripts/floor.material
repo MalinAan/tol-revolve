@@ -62,6 +62,22 @@ material Floor/Concrete1
   }
 }
 
+material Floor/Concrete2
+{
+  technique
+  {
+    pass
+    {
+
+      texture_unit
+      {
+        texture concrete1.png
+        scale 0.002 0.002
+      }
+    }
+  }
+}
+
 material Floor/Grass
 {
   technique
@@ -89,6 +105,22 @@ material Floor/Asphalt
       {
         texture asphalt.png
         scale 0.01 0.01
+      }
+    }
+  }
+}
+
+material Floor/Tiles
+{
+  technique
+  {
+    pass
+    {
+
+      texture_unit
+      {
+        texture white_tiles.png
+        scale 0.002 0.002
       }
     }
   }
