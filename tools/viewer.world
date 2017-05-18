@@ -32,7 +32,7 @@
       <uri>model://tol_ground</uri>
     </include>
     <include>
-      <uri>model://test_bot</uri>
+      <uri>model://tol_robot</uri>
     </include>
 
     <gui fullscreen='0'>

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Runs gazebo with the correct plugin path
-WORLD=/home/elte/mt/tol/scripts/offline-evolve/offline-evolve.world
+WORLD=../scripts/offline-evolve/offline-evolve.world
 if [ "$1" == "--visual" ]; then
     CMD=gazebo
 else
@@ -12,4 +12,4 @@ if [ "$1" == "--interactive" ]; then
     WORLD=idemo.world
 fi
 
-GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:`pwd`/../build GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`pwd`/models $CMD -u $WORLD
+GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:`pwd`/../build GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`pwd`/models $CMD --verbose -u $WORLD

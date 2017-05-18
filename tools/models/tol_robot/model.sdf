@@ -27,7 +27,7 @@
 <geometry><box><size>1.500000e-03 3.400000e-02 3.400000e-02</size></box></geometry></collision>
 <visual name="component_PassiveHinge__conn_a_conn_a_visual"><pose>2.256528e-18 -5.610000e-02 8.243406e-19 1.570796e+00 -5.551115e-17 -1.570796e+00</pose>
 <material><ambient>0.50 0.50 0.50 1.00</ambient><diffuse>0.50 0.50 0.50 1.00</diffuse><specular>0.1 0.1 0.1 1.00</specular></material>
-<geometry><mesh><uri>model://tol_meshes/meshes/PassiveHinge.stl</uri></mesh></geometry></visual>
+<geometry><mesh><uri>model://tol_meshes/meshes/PassiveHinge.dae</uri></mesh></geometry></visual>
 <collision name="component_PassiveHinge__conn_a_collision"><pose>2.631229e-18 -5.685000e-02 6.578071e-19 1.570796e+00 -5.551115e-17 -1.570796e+00</pose>
 <surface><contact><ode><soft_cfm>1.000000e-02</soft_cfm><soft_erp>2.000000e-01</soft_erp></ode><bullet><soft_cfm>1.000000e-02</soft_cfm><soft_erp>2.000000e-01</soft_erp></bullet></contact>
 <friction><ode><mu>1.000000e+00</mu>
@@ -66,7 +66,7 @@
 <link name="link_component_PassiveHinge__conn_b"><pose>6.294965e-18 -7.335000e-02 1.573741e-18 1.570796e+00 -5.551115e-17 -1.570796e+00</pose>
 <visual name="component_PassiveHinge__conn_b_conn_b_visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 3.141593e+00 1.110223e-16 3.141593e+00</pose>
 <material><ambient>0.50 0.50 0.50 1.00</ambient><diffuse>0.50 0.50 0.50 1.00</diffuse><specular>0.1 0.1 0.1 1.00</specular></material>
-<geometry><mesh><uri>model://tol_meshes/meshes/PassiveHinge.stl</uri></mesh></geometry></visual>
+<geometry><mesh><uri>model://tol_meshes/meshes/PassiveHinge.dae</uri></mesh></geometry></visual>
 <collision name="component_PassiveHinge__conn_b_collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 -2.220446e-16 0.000000e+00 0.000000e+00</pose>
 <surface><contact><ode><soft_cfm>1.000000e-02</soft_cfm><soft_erp>2.000000e-01</soft_erp></ode><bullet><soft_cfm>1.000000e-02</soft_cfm><soft_erp>2.000000e-01</soft_erp></bullet></contact>
 <friction><ode><mu>1.000000e+00</mu>
