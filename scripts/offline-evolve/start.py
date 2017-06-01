@@ -33,6 +33,23 @@ class OfflineEvolutionSupervisor(Supervisor):
             self.ode_errors = 0
             sys.stderr.write('ODE Message 3 (100)\n')
 
+    def write_stdout(self, data):
+        """
+        :param data:
+        :return:
+        """
+        # filter out some body analyzer messages
+        if 'request' in data:
+            pass
+        elif 'world now contains' in data:
+            pass
+        elif 'Robot loaded' in data:
+            pass
+        elif data.strip():
+            sys.stdout.write(data)
+
+
+
 args = parser.parse_args()
 
 os.environ['GAZEBO_PLUGIN_PATH'] = os.path.join(tol_path, 'build')

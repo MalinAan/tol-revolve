@@ -34,8 +34,8 @@ from tol.logging import logger, output_console
 from tol.util.analyze import list_extremities, count_joints, count_motors, count_extremities, count_connections
 
 # Log output to console
-output_console()
-logger.setLevel(logging.DEBUG)
+#output_console()
+logger.setLevel(logging.INFO)
 
 # Add offline evolve arguments
 parser.add_argument(
@@ -53,6 +53,10 @@ parser.add_argument(
 
 def str2bool(v):
     return v.lower() == "true" or v == "1"
+
+def printnow(s):
+    print(s)
+    sys.stdout.flush()
 
 parser.add_argument(
     '--keep-parents',
@@ -100,7 +104,6 @@ parser.add_argument(
          "decision is made to restart from snapshot. The assumption is "
          "that the world may have become slow and restarting will help."
 )
-
 
 class OfflineEvoManager(World):
     """
@@ -240,15 +243,16 @@ class OfflineEvoManager(World):
             parents = [None for _ in trees]
 
         pairs = []
-        print("Evaluating population...")
+        printnow("--- Evaluating population ---")
         for tree, bbox, par in itertools.izip(trees, bboxes, parents):
-            print("Evaluating individual...")
+            printnow("Evaluating individual...")
+
             before = time.time()
             robot = yield From(self.evaluate_pair(tree, bbox, par))
             pairs.append((robot, time.time() - before))
-            print("Done.")
+            printnow("Done.")
 
-        print("Done evaluating population.")
+        print("--- Done evaluating population. ---")
         raise Return(pairs)
 
     @trollius.coroutine
@@ -259,13 +263,13 @@ class OfflineEvoManager(World):
         :param parents:
         :return:
         """
-        print("Producing generation...")
+        printnow("--- Producing generation ---")
         trees = []
         bboxes = []
         parent_pairs = []
 
         while len(trees) < self.conf.num_children:
-            print("Producing individual...")
+            printnow("Producing individual...")
             if self.conf.disable_selection:
                 p1, p2 = random.sample(parents, 2)
             else:
@@ -281,7 +285,7 @@ class OfflineEvoManager(World):
 
             print("Done.")
 
-        print("Done producing generation.")
+        print("--- Done producing generation. ---")
         raise Return(trees, bboxes, parent_pairs)
 
     def log_generation(self, evo, generation, pairs):
@@ -291,7 +295,7 @@ class OfflineEvoManager(World):
         :param pairs: List of tuples (robot, evaluation wallclock time)
         :return:
         """
-        print("================== GENERATION %d ==================" % generation)
+        printnow("================== GENERATION %d ==================" % generation)
         if not self.output_directory:
             return
 
@@ -329,6 +333,7 @@ class OfflineEvoManager(World):
             evo_start = 1
             gen_start = 1
             pairs = None
+        gen_count=0
 
         for evo in range(evo_start, conf.num_evolutions + 1):
             self.current_run = evo
@@ -336,12 +341,16 @@ class OfflineEvoManager(World):
             if not pairs:
                 # Only create initial population if we are not restoring from
                 # a previous experiment.
+                printnow("Generating initial population...")
                 trees, bboxes = yield From(self.generate_population(conf.population_size))
+                printnow("Evaluating initial population...")
                 pairs = yield From(self.evaluate_population(trees, bboxes))
+                printnow("Done evaluating initial population...")
                 self.log_generation(evo, 0, pairs)
 
             for generation in xrange(gen_start, conf.num_generations):
-                if (generation % 10) == 0:
+                # experimental snapshotting followed by exit and restart to avoid memory leaks etc.
+                if gen_count==1: #make this a parameter
                     # Snapshot every 10 generations
                     self._snapshot_data = {
                         "local_pairs": pairs,
@@ -349,7 +358,9 @@ class OfflineEvoManager(World):
                         "evo_start": evo
                     }
                     yield From(self.create_snapshot())
-                    print("Created snapshot of experiment state.")
+                    print("Created snapshot of experiment state, exiting")
+                    sys.exit(22)
+
 
                 # Produce the next generation and evaluate them
                 robots = [p[0] for p in pairs]
@@ -375,6 +386,8 @@ class OfflineEvoManager(World):
 
                 pairs = pairs[:conf.population_size]
                 self.log_generation(evo, generation, pairs)
+
+                gen_count += 1
 
             # Clear "restore" parameters
             gen_start = 1

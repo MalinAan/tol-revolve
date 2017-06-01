@@ -7,7 +7,11 @@
     </scene>
     <physics type="ode">
       <max_step_size>0.003</max_step_size>
-      <real_time_update_rate>333</real_time_update_rate>
+      <real_time_update_rate>999</real_time_update_rate>
+      <!-- <real_time_update_rate>333</real_time_update_rate> -->
+      <!-- <real_time_update_rate>0.0</real_time_update_rate> -->
+      <!-- <real_time_factor>6.0</real_time_factor> -->
+
       <ode>
         <constraints>
           <!-- In Robogen: Simulator.cpp -->
