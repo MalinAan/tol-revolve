@@ -105,6 +105,12 @@ parser.add_argument(
          "that the world may have become slow and restarting will help."
 )
 
+parser.add_argument(
+    '--restart-interval',
+    default=10, type=int,
+    help="Number of generations to run before restarting from snapshot."
+         "The assumption is that restarting will avoid memory leak crashes and slow simulation."
+)
 
 
 class OfflineEvoManager(World):
@@ -351,17 +357,20 @@ class OfflineEvoManager(World):
                 self.log_generation(evo, 0, pairs)
 
             for generation in xrange(gen_start, conf.num_generations):
-                # experimental snapshotting followed by exit and restart to avoid memory leaks etc.
-                if gen_count==1: #make this a parameter
-                    # Snapshot every 10 generations
-                    self._snapshot_data = {
-                        "local_pairs": pairs,
-                        "gen_start": generation,
-                        "evo_start": evo
-                    }
-                    yield From(self.create_snapshot())
-                    print("Created snapshot of experiment state, exiting")
+                # snapshot data every generation, overhead is not too big
+                self._snapshot_data = {
+                    "local_pairs": pairs,
+                    "gen_start": generation,
+                    "evo_start": evo
+                }
+                yield From(self.create_snapshot())
+                print("Created snapshot of experiment state")
+
+                # restart every n generations to avoid crash from memory leaks or similar
+                if gen_count==self.conf.restart_interval: #make this a parameter
+                    print("Initiating scheduled shutdown and restart from snapshot...")
                     sys.exit(22)
+                gen_count += 1
 
 
                 # Produce the next generation and evaluate them
@@ -389,7 +398,6 @@ class OfflineEvoManager(World):
                 pairs = pairs[:conf.population_size]
                 self.log_generation(evo, generation, pairs)
 
-                gen_count += 1
 
             # Clear "restore" parameters
             gen_start = 1
