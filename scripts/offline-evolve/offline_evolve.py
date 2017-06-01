@@ -1,6 +1,6 @@
 # Offline evolution scheme
 # - We use a population of constant size 10
-# - Each robot is evaluated for 20 seconds, though we may vary this number
+# - Each robot is evaluated for 12 seconds, though we may vary this number
 # - The average speed during this evaluation is the fitness
 # - We do parent selection using a binary tournament: select two parents at
 #   random, the one with the best fitness is parent 1, repeat for parent 2.
@@ -104,6 +104,8 @@ parser.add_argument(
          "decision is made to restart from snapshot. The assumption is "
          "that the world may have become slow and restarting will help."
 )
+
+
 
 class OfflineEvoManager(World):
     """
@@ -433,6 +435,7 @@ def run():
     :return:
     """
     conf = parser.parse_args()
+
     world = yield From(OfflineEvoManager.create(conf))
     yield From(world.run())
 

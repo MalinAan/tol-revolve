@@ -48,8 +48,6 @@ class OfflineEvolutionSupervisor(Supervisor):
         elif data.strip():
             sys.stdout.write(data)
 
-
-
 args = parser.parse_args()
 
 os.environ['GAZEBO_PLUGIN_PATH'] = os.path.join(tol_path, 'build')
@@ -64,5 +62,6 @@ supervisor = OfflineEvolutionSupervisor(
     manager_args=sys.argv[1:],
     restore_directory=args.restore_directory
 )
+
 
 supervisor.launch()
