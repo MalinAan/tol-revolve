@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<sdf version="1.5"><model name="obstacles"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<link name="box"><pose>-3.000000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 -3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 -3.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 -3.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 -2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 -2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 -2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 -1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 -1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 -1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 -1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 -1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 -1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 -6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 -6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 -6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 6.000000e-01 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 6.000000e-01 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 1.200000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 1.200000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 1.800000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 1.800000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-3.000000e+00 2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -3.490659e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 6.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.133333e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.133333e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-2.400000e+00 2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.800000e+00 2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-1.200000e+00 2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>-6.000000e-01 2.400000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>0.000000e+00 2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 1.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.416667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.416667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>6.000000e-01 2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 6.981317e-02</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 2.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>8.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>8.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.200000e+00 2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 1.396263e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 3.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.083333e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.083333e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>1.800000e+00 2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.094395e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 4.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>9.666667e-04</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>9.666667e-04</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<link name="box"><pose>2.400000e+00 2.400000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 2.792527e-01</pose>
+<collision name="collision"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></collision>
+<visual name="visual"><pose>0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -0.000000e+00 0.000000e+00</pose>
+<geometry><box><size>1.000000e-01 1.000000e-01 5.000000e-02</size></box></geometry></visual>
+<inertial><mass>1.000000e+00</mass><inertia><ixx>1.041667e-03</ixx><ixy>0.000000e+00</ixy><ixz>0.000000e+00</ixz><iyy>1.041667e-03</iyy><iyz>0.000000e+00</iyz><izz>1.666667e-03</izz></inertia></inertial></link>
+<static>0</static></model></sdf>

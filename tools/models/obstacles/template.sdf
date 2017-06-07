@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<!-- Custom ground plane -->
+  <model name="obst">
+    <static>true</static>
+    <pose> 0 0 0.015 0 0 0 </pose>
+
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+        <box>
+          <size>0.1 0.1 0.03</size>
+        </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <!-- RobogenCollision.cpp -->
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0.01</slip1>
+              <slip2>0.01</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kd>9.000000e+04</kd>
+              <kp>2.000000e+06</kp>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+            <box>
+              <size>0.1 0.1 0.03</size>
+            </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+<!-- END Custom ground plane -->
+</sdf>
