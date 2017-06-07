@@ -112,6 +112,13 @@ parser.add_argument(
          "The assumption is that restarting will avoid memory leak crashes and slow simulation."
 )
 
+#add world argument
+parser.add_argument(
+    '--world-file',
+    default='offline-evolve.world', type=str,
+    help="The world file to evolve in."
+)
+
 
 class OfflineEvoManager(World):
     """
