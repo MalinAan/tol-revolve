@@ -64,5 +64,5 @@ supervisor = OfflineEvolutionSupervisor(
     restore_directory=args.restore_directory
 )
 
-
+print("using world file: %s" % supervisor.world_file)
 supervisor.launch()
