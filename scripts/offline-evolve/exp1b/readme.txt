@@ -1,0 +1,1 @@
+same as exp1 but longer evaluation time and "world" solver

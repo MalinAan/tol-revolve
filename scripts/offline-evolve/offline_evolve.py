@@ -258,6 +258,7 @@ class OfflineEvoManager(World):
 
         pairs = []
         printnow("--- Evaluating population ---")
+        start_time = time.time()
         for tree, bbox, par in itertools.izip(trees, bboxes, parents):
             printnow("Evaluating individual...")
 
@@ -266,7 +267,11 @@ class OfflineEvoManager(World):
             pairs.append((robot, time.time() - before))
             printnow("Done.")
 
+        diff = time.time() - start_time
+        printnow("Population evaluation time:")
+        printnow(diff)
         print("--- Done evaluating population. ---")
+
         raise Return(pairs)
 
     @trollius.coroutine
