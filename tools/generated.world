@@ -6,6 +6,7 @@
         <grid>0</grid>
     </scene>
     <physics type="ode">
+      <!-- <max_step_size>0.003</max_step_size> -->
       <max_step_size>0.003</max_step_size>
       <real_time_update_rate>999</real_time_update_rate>
       <!-- <real_time_update_rate>333</real_time_update_rate> -->
@@ -23,7 +24,7 @@
           <contact_surface_layer>1e-8</contact_surface_layer>
         </constraints>
         <solver>
-          <type>quick</type>
+          <type>world</type>
         </solver>
       </ode>
     </physics>
