@@ -245,6 +245,13 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    '--disable-passive-joints',
+    default=False, type=str_to_bool,
+    help="Disable the passive joint in robots."
+)
+
+
+parser.add_argument(
     '--warmup-time',
     default=0, type=float,
     help="The number of seconds the robot is initially ignored, allows it to e.g. topple over"
