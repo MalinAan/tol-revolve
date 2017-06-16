@@ -261,16 +261,17 @@ class OfflineEvoManager(World):
         start_time = time.time()
         for tree, bbox, par in itertools.izip(trees, bboxes, parents):
             printnow("Evaluating individual...")
+            sys.stdout.flush()
 
             before = time.time()
             robot = yield From(self.evaluate_pair(tree, bbox, par))
             pairs.append((robot, time.time() - before))
-            printnow("Done.")
+            print("Done in %.2f s." % (time.time() - before) )
+            sys.stdout.flush()
 
         diff = time.time() - start_time
-        printnow("Population evaluation time:")
-        printnow(diff)
         print("--- Done evaluating population. ---")
+        print("Population evaluation time: %.2f s. " % diff)
 
         raise Return(pairs)
 
@@ -314,7 +315,7 @@ class OfflineEvoManager(World):
         :param pairs: List of tuples (robot, evaluation wallclock time)
         :return:
         """
-        printnow("================== GENERATION %d ==================" % generation)
+        printnow("================== GENERATION %d DONE ==================" % generation)
         if not self.output_directory:
             return
 
@@ -383,6 +384,7 @@ class OfflineEvoManager(World):
                     sys.exit(22)
                 gen_count += 1
 
+                before = time.time()
 
                 # Produce the next generation and evaluate them
                 robots = [p[0] for p in pairs]
@@ -407,6 +409,11 @@ class OfflineEvoManager(World):
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
 
                 pairs = pairs[:conf.population_size]
+
+                #display elapsed time of 1 generation
+                diff = time.time() - before
+                printnow("Generation time: %.2f s." % diff)
+
                 self.log_generation(evo, generation, pairs)
 
 
