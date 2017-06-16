@@ -3,8 +3,8 @@ import os
 from string import Template
 import math
 
-from sdfbuilder import Link, Model, SDF
-from sdfbuilder.math import Vector3
+from sdfbuilder import Link, Model, SDF, PosableGroup
+from sdfbuilder.math import Vector3, Quaternion
 from sdfbuilder.structure import Box, Cylinder, Collision, Visual, StructureCombination
 
 #template for model config files
@@ -49,44 +49,37 @@ def write_model(model_name,sdf):
 
 
 #creates an sdfbuilder model with a grid of boxes
-def gen_boxes(model_name, dimensions=4, spacing=0.5, size=0.05):
+def gen_boxes(model_name, dimensions=4, spacing=0.5, size=0.05, height=0.015):
     model = Model(model_name,static=True)
     for x in range(-dimensions,dimensions+1):
         for y in range(-dimensions,dimensions+1):
             l = Link("box")
-
-            #box_geom = Box(1.0, 1.0, 1.0, mass=0.5)
-            #b = StructureCombination("box", box_geom)
-            #l.add_element(b)
-
-            #height=0.005+0.007*max(abs(x),abs(y))
-            height=0.01
-            center_sq=3
+            center_sq=1
             if (abs(x)>=center_sq or abs(y)>=center_sq):
                 l.make_box(1, size, size, height)
-
             pos = Vector3(spacing*x,spacing*y,height/2)
-
             l.set_position(pos)
             #l.rotate_around(Vector3(0, 0, 1), math.radians(x*y), relative_to_child=False)
-
             model.add_element(l)
     return model
 
 
 
-#creates an sdfbuilder model with a grid of boxes
-def gen_steps(model_name, numsteps=4, stepheight=0.01, size=0.1, incline=0.0):
+#steps
+def gen_steps(model_name, num_steps=6, offset=0.4, height=0.02, width=3.0, depth=0.2, incline=0):
     model = Model(model_name,static=True)
-    for x in range(0,numsteps):
-            l = Link("box")
-            height=0.01
-            offset=0.4
-            l.make_box(1, size, size, stepheight)
-            pos = Vector3(offset+size*x,0,stepheight/2+x*stepheight)
-            l.set_position(pos)
-            #l.rotate_around(Vector3(0, 0, 1), math.radians(x*y), relative_to_child=False)
-            model.add_element(l)
+    steps = PosableGroup()
+    for x in range(0,num_steps):
+        l = Link("box")
+        l.make_box(1, depth, width, height)
+        pos = Vector3(offset+depth*x,0,height/2+x*height)
+        l.set_position(pos)
+        steps.add_element(l)
+
+    for x in range(0,4):
+        steps.set_rotation(Quaternion.from_rpy(0,math.radians(-incline),math.radians(90*x)))
+        model.add_element(steps.copy())
+
     return model
 
 
@@ -94,13 +87,14 @@ def gen_steps(model_name, numsteps=4, stepheight=0.01, size=0.1, incline=0.0):
 #generate a grid of boxes and write to file
 sdf = SDF()
 model_name="boxes_grid"
-model=gen_boxes(model_name, dimensions=8,spacing=0.15, size=0.04)
+model=gen_boxes(model_name, dimensions=6,spacing=0.3, size=0.04, height=0.02)
 sdf.add_element(model)
 write_model(model_name,sdf)
 
 #generate steps
 sdf = SDF()
 model_name="steps_exp"
-model=gen_steps(model_name)
+model=gen_steps(model_name, incline=4)
+model.set_position(Vector3(0,0,-0.02)) #inaccurate height compensation due to the incline
 sdf.add_element(model)
 write_model(model_name,sdf)
