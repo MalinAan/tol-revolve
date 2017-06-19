@@ -49,12 +49,11 @@ def write_model(model_name,sdf):
 
 
 #creates an sdfbuilder model with a grid of boxes
-def gen_boxes(model_name, dimensions=4, spacing=0.5, size=0.05, height=0.015):
+def gen_boxes(model_name, dimensions=4, spacing=0.5, size=0.05, height=0.015, center_sq=1):
     model = Model(model_name,static=True)
     for x in range(-dimensions,dimensions+1):
         for y in range(-dimensions,dimensions+1):
             l = Link("box")
-            center_sq=1
             if (abs(x)>=center_sq or abs(y)>=center_sq):
                 l.make_box(1, size, size, height)
             pos = Vector3(spacing*x,spacing*y,height/2)
@@ -96,5 +95,19 @@ sdf = SDF()
 model_name="steps_exp"
 model=gen_steps(model_name, incline=4)
 model.set_position(Vector3(0,0,-0.02)) #inaccurate height compensation due to the incline
+sdf.add_element(model)
+write_model(model_name,sdf)
+
+#different boxes
+sdf = SDF()
+model_name="exp2_boxes"
+model=gen_boxes(model_name, dimensions=6,spacing=0.3, size=0.08, height=0.04, center_sq=0)
+sdf.add_element(model)
+write_model(model_name,sdf)
+
+#different boxes
+sdf = SDF()
+model_name="exp2_chasms"
+model=gen_boxes(model_name, dimensions=6,spacing=0.4, size=0.3, height=0.04, center_sq=0)
 sdf.add_element(model)
 write_model(model_name,sdf)
