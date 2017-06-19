@@ -157,8 +157,8 @@ class OfflineEvoManager(World):
         # Output files
         csvs = {
             'generations': ['run', 'gen', 'robot_id', 'vel', 'dvel', 'fitness', 't_eval'],
-            'robot_details': ['robot_id', 'extremity_id', 'extremity_size',
-                              'joint_count', 'motor_count']
+            'robot_details': ['robot_id', 'extremity_id', 'extremity_size', 'joint_count', 'motor_count'],
+            'generation_details': ['run', 'gen', 'gen_time']
         }
         self.csv_files = {k: {'filename': None, 'file': None, 'csv': None,
                               'header': csvs[k]}
@@ -327,7 +327,7 @@ class OfflineEvoManager(World):
         print("--- Done producing generation. ---")
         raise Return(trees, bboxes, parent_pairs)
 
-    def log_generation(self, evo, generation, pairs):
+    def log_generation(self, evo, generation, pairs, generation_eval_time=0):
         """
         :param evo: The evolution run
         :param generation:
@@ -354,6 +354,9 @@ class OfflineEvoManager(World):
                 do.writerow((robot_id, counter, len(extr), num_joints, num_motors))
                 counter += 1
 
+
+        gen_file = self.csv_files['generation_details']['csv']
+        gen_file.writerow([evo,generation,generation_eval_time])
 
 
     @trollius.coroutine
@@ -387,12 +390,14 @@ class OfflineEvoManager(World):
             if not pairs:
                 # Only create initial population if we are not restoring from
                 # a previous experiment.
+                before = time.time()
                 printnow("Generating initial population...")
                 trees, bboxes = yield From(self.generate_population(conf.population_size))
                 printnow("Evaluating initial population...")
                 pairs = yield From(self.evaluate_population(trees, bboxes))
                 printnow("Done evaluating initial population...")
-                self.log_generation(evo, 0, pairs)
+                diff = time.time() - before
+                self.log_generation(evo, 0, pairs, diff)
                 gen_count += 1
 
             for generation in xrange(gen_start, conf.num_generations):
@@ -441,7 +446,7 @@ class OfflineEvoManager(World):
                 diff = time.time() - before
                 printnow("Generation time: %.2f s." % diff)
 
-                self.log_generation(evo, generation, pairs)
+                self.log_generation(evo, generation, pairs, diff)
 
 
             # Clear "restore" parameters
