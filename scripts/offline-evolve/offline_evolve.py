@@ -1,10 +1,11 @@
 # Offline evolution scheme
-# - We use a population of constant size 10
-# - Each robot is evaluated for 12 seconds, though we may vary this number
-# - The average speed during this evaluation is the fitness
+# - usage: python start.py @folder/settings-file.conf
+# - We use a population of constant size population_size
+# - Each robot is evaluated for evaluation_time seconds
+# - The average speed during this evaluation is the fitness (almost)
 # - We do parent selection using a binary tournament: select two parents at
 #   random, the one with the best fitness is parent 1, repeat for parent 2.
-# - Using this mechanism, we generate 10 children
+# - Using this mechanism, we generate num_children children
 # - After evaluation of the children, we either do:
 # -- Plus scheme, sort *all* robots by fitness
 # -- Comma scheme, get rid of the parents and continue with children only
@@ -92,12 +93,6 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    '--num-evolutions',
-    default=30, type=int,
-    help="The number of times to repeat the experiment."
-)
-
-parser.add_argument(
     '--evaluation-threshold',
     default=10.0, type=float,
     help="Maximum number of seconds one evaluation can take before the "
@@ -116,6 +111,30 @@ parser.add_argument(
     '--world-file',
     default='offline-evolve.world', type=str,
     help="The world file to evolve in."
+)
+
+parser.add_argument(
+    '--num-evolutions',
+    default=10, type=int,
+    help="The number of times to repeat the experiment (runs)."
+)
+
+# parser.add_argument(
+#     '--robot-id-base',
+#     default=0, type=int,
+#     help="Robot ID to start from. To avoid name clahes when doing runs on multiple machines and combining later."
+# )
+
+parser.add_argument(
+    '--start-run',
+    default=0, type=int,
+    help="Run to start from. Useful when doing runs on multiple machines."
+)
+
+parser.add_argument(
+    '--robot-id-stride',
+    default=100000, type=int,
+    help="stride mutiplied by run gives the robot id to start from. To avoid ID clashes when running on multiple machines. Should be larger than the expected number of generated robots in a run"
 )
 
 
@@ -335,6 +354,8 @@ class OfflineEvoManager(World):
                 do.writerow((robot_id, counter, len(extr), num_joints, num_motors))
                 counter += 1
 
+
+
     @trollius.coroutine
     def run(self):
         """
@@ -343,20 +364,25 @@ class OfflineEvoManager(World):
         conf = self.conf
 
         if self.do_restore:
+            print("Restoring from a previously cancelled / crashed experiment")
             # Recover from a previously cancelled / crashed experiment
             data = self.do_restore
             evo_start = data['evo_start']
             gen_start = data['gen_start']
             pairs = data['local_pairs']
         else:
-            # Start at the first experiment
-            evo_start = 1
+            print ("Starting a fresh experiment")
+            # Start at the specified run (default is 0)
+            evo_start = conf.start_run
+            self.robot_id = conf.robot_id_stride * conf.start_run
             gen_start = 1
             pairs = None
         gen_count=0
 
-        for evo in range(evo_start, conf.num_evolutions + 1):
+        #the main run loop
+        for evo in range(evo_start, conf.start_run + conf.num_evolutions):
             self.current_run = evo
+            print("Current run: %d" % evo)
 
             if not pairs:
                 # Only create initial population if we are not restoring from
@@ -367,6 +393,7 @@ class OfflineEvoManager(World):
                 pairs = yield From(self.evaluate_population(trees, bboxes))
                 printnow("Done evaluating initial population...")
                 self.log_generation(evo, 0, pairs)
+                gen_count += 1
 
             for generation in xrange(gen_start, conf.num_generations):
                 # snapshot data every generation, overhead is not too big
