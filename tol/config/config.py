@@ -317,6 +317,13 @@ parser.add_argument(
          " in order to configure some physics parameters."
 )
 
+parser.add_argument(
+    '--enable-pose-logging',
+    default=True, type=str_to_bool,
+    help="Enable pose logging of individual robots. Log file (poses.csv) can grow to very large sizes."
+)
+
+
 
 def make_revolve_config(conf):
     """
