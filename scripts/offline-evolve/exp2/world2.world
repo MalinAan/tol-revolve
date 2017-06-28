@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <world name="world1">
+  <world name="world2">
     <scene>
         <origin_visual>0</origin_visual>
         <grid>0</grid>
@@ -45,7 +45,7 @@
     <!-- insert objects here -->
     <!-- shifting down to easily place robots on zero origin -->
     <include>
-      <uri>model://exp2_boxes</uri>
+      <uri>model://exp2_chasms</uri>
       <pose>0 0 -0.04 0 0 0</pose>
     </include>
 
