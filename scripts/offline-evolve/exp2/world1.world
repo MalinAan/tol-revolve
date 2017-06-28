@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <world name="world1">
+  <world name="default">
     <scene>
         <origin_visual>0</origin_visual>
         <grid>0</grid>
