@@ -4,4 +4,5 @@
 WORLD=$1
 MODELS=$2
 CMD=gazebo
-GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:`pwd`/../build GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`pwd`/../../revolve/tools/models:`pwd`/models:$2 $CMD -u $WORLD
+#GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:`pwd`/../build GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`pwd`/../../revolve/tools/models:`pwd`/models:$2 $CMD -u $WORLD
+GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:$REVOLVE_PATH/tol-revolve/build GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:$REVOLVE_PATH/revolve/tools/models:$REVOLVE_PATH/tol-revolve/tools/models:$2 $CMD -u $WORLD
