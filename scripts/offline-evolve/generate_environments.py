@@ -105,9 +105,16 @@ model=gen_boxes(model_name, dimensions=6,spacing=0.3, size=0.08, height=0.04, ce
 sdf.add_element(model)
 write_model(model_name,sdf)
 
-#different boxes
+#boxes which act as platforms, chasms between
 sdf = SDF()
 model_name="exp2_chasms"
 model=gen_boxes(model_name, dimensions=6,spacing=0.4, size=0.3, height=0.04, center_sq=0)
+sdf.add_element(model)
+write_model(model_name,sdf)
+
+#different boxes
+sdf = SDF()
+model_name="exp2_pillars"
+model=gen_boxes(model_name, dimensions=4,spacing=0.3, size=0.04, height=0.2, center_sq=1)
 sdf.add_element(model)
 write_model(model_name,sdf)
