@@ -92,9 +92,9 @@ write_model(model_name,sdf)
 
 #generate steps
 sdf = SDF()
-model_name="steps_exp"
+model_name="exp2_steps"
 model=gen_steps(model_name, incline=4)
-model.set_position(Vector3(0,0,-0.02)) #inaccurate height compensation due to the incline
+#model.set_position(Vector3(0,0,-0.041)) #inaccurate height compensation due to the incline - does not seem to affect the model?
 sdf.add_element(model)
 write_model(model_name,sdf)
 
