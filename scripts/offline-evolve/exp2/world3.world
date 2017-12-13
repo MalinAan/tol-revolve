@@ -39,14 +39,14 @@
     <!-- shifting down to easily place robots on zero origin -->
     <include>
       <uri>model://tol_ground</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 -0.04 0 0 0</pose>
     </include>
 
     <!-- insert objects here -->
     <!-- shifting down to easily place robots on zero origin -->
     <include>
       <uri>model://exp2_steps</uri>
-      <pose>0 0 -0.041 0 0 0</pose>
+      <pose>0 0 -0.09 0 0 0</pose>
     </include>
 
   </world>

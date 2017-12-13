@@ -93,7 +93,7 @@ write_model(model_name,sdf)
 #generate steps
 sdf = SDF()
 model_name="exp2_steps"
-model=gen_steps(model_name, incline=4)
+model=gen_steps(model_name, incline=4, offset=0.8)
 #model.set_position(Vector3(0,0,-0.041)) #inaccurate height compensation due to the incline - does not seem to affect the model?
 sdf.add_element(model)
 write_model(model_name,sdf)
@@ -115,6 +115,6 @@ write_model(model_name,sdf)
 #different boxes
 sdf = SDF()
 model_name="exp2_pillars"
-model=gen_boxes(model_name, dimensions=4,spacing=0.3, size=0.04, height=0.2, center_sq=1)
+model=gen_boxes(model_name, dimensions=4,spacing=0.3, size=0.04, height=0.2, center_sq=2)
 sdf.add_element(model)
 write_model(model_name,sdf)
