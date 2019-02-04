@@ -59,7 +59,7 @@ cdata6$plot = as.factor("# of hidden neurons");
 cdata7$plot = as.factor("# of connections");
 
 # Fitness over generations
-ggplot(cdata, aes(births)) +
+plot1 <- ggplot(cdata, aes(births)) +
   facet_grid(plot~., scale="free") +
   geom_line(aes(y=fit, colour=exp)) +
   geom_ribbon(aes(ymin=fit-fsd, ymax=fit+fsd, fill=exp), alpha=0.1, linetype=0) +
@@ -89,6 +89,10 @@ ggplot(cdata, aes(births)) +
   scale_colour_discrete(name="Experiment") +
   xlab("# of births") +
   ylab("");
+
+pdf(paste(dirs, collapse="_vs_"))
+print(plot1)
+dev.off()
 
 #last_gens = cdata[cdata$gen==max(cdata$gen),];
 

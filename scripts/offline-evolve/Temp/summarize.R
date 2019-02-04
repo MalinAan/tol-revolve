@@ -7,8 +7,8 @@ library(ggplot2)
 library(plyr)
 library(reshape)
 
-read_dir_data <- function(odir, prefix) {
-  tdata = read.csv(paste(prefix, odir, "/generations.csv", sep=""), head=TRUE);
+read_dir_data <- function(odir) {
+  tdata = read.csv(paste(odir, "/generations.csv", sep=""), head=TRUE);
   tdata$exp = as.factor(odir);
   if (tdata[1,]$exp == "plus-gradual") {
     tdata$births = tdata$gen + 15;
@@ -16,13 +16,13 @@ read_dir_data <- function(odir, prefix) {
     tdata$births = tdata$gen * 15 + 15;
   }
   
-  rdata = read.csv(paste(prefix, odir, "/robots.csv", sep=""), head=TRUE);
+  rdata = read.csv(paste(odir, "/robots.csv", sep=""), head=TRUE);
   
   return(merge(tdata[tdata$births<=3000,], rdata, by.x=c("robot_id", "run"), by.y=c("id", "run")));
 }
 
-dirs = list.files("./output");
-data = do.call(rbind, lapply(dirs, read_dir_data, prefix="./output/"));
+dirs = list.files(".");
+data = do.call(rbind, lapply(dirs, read_dir_data));
 
 # Unify fitness calculation
 data$fitness = 5*data$dvel + data$vel;
