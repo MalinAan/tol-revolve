@@ -261,7 +261,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--fitness-size-factor',
-    default=0, type=float,
+    default=-0.5, type=float,
     help="Multiplication factor of robot size in the fitness function. Note that this"
          " needs to be negative to discount size."
 )

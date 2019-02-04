@@ -59,7 +59,7 @@ cdata6$plot = as.factor("# of hidden neurons");
 cdata7$plot = as.factor("# of connections");
 
 # Fitness over generations
-ggplot(cdata, aes(births)) +
+plot1 <- ggplot(cdata, aes(births)) +
   facet_grid(plot~., scale="free") +
   geom_line(aes(y=fit, colour=exp)) +
   geom_ribbon(aes(ymin=fit-fsd, ymax=fit+fsd, fill=exp), alpha=0.1, linetype=0) +
@@ -90,6 +90,10 @@ ggplot(cdata, aes(births)) +
   xlab("# of births") +
   ylab("");
 
+pdf(paste(dirs, collapse="_vs_"))
+print(plot1)
+dev.off()
+
 #last_gens = cdata[cdata$gen==max(cdata$gen),];
 
 # Retrieve all the best robots per experiment
@@ -98,7 +102,7 @@ exp_maxes = do.call(rbind,lapply(split(data, list(data$exp, data$run)),function(
 exp_maxes = exp_maxes[order(-exp_maxes$fitness),]
 
 
-write.csv(exp_maxes, "../exp_makes.csv")
+write.csv(exp_maxes, "../exp_makes_" +paste(dirs, collapse="_vs_") +  ".csv")
 exp_states = ddply(data, ~exp+run, summarise, cur_gen=max(gen));
 exp_states = exp_states[order(exp_states$exp, -exp_states$run),];
 
