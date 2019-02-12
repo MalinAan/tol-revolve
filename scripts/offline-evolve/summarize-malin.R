@@ -102,7 +102,7 @@ exp_maxes = do.call(rbind,lapply(split(data, list(data$exp, data$run)),function(
 exp_maxes = exp_maxes[order(-exp_maxes$fitness),]
 
 
-write.csv(exp_maxes, "../exp_makes.csv")
+write.csv(exp_maxes, ("exp_makes.csv"))
 exp_states = ddply(data, ~exp+run, summarise, cur_gen=max(gen));
 exp_states = exp_states[order(exp_states$exp, -exp_states$run),];
 
