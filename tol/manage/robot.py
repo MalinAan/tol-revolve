@@ -146,8 +146,10 @@ class Robot(RvRobot):
         d_fac = self.conf.fitness_displacement_factor
         s_fac = self.conf.fitness_size_factor
         d = 1.0 - (self.conf.fitness_size_discount * self.size)
-        v = self.displacement_velocity()/self.size
-        return v if v <= self.conf.fitness_limit else 0.0
+
+        #v = d * (d_fac * self.displacement_velocity() + v_fac * self.velocity() + s_fac * self.size)
+        v = self.displacement_velocity()/(1.1 * self.size)
+	return v if v <= self.conf.fitness_limit else 0.0
 
     def is_evaluated(self):
         """
