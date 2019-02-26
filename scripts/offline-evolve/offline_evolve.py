@@ -20,6 +20,7 @@ import itertools
 import logging
 import trollius
 from trollius import From, Return
+from pprint import pprint
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__))+'/../../')
 
@@ -240,9 +241,31 @@ class OfflineEvoManager(World):
         """
         # Pause the world just in case it wasn't already
         yield From(wait_for(self.pause(True)))
-
+	#print("-------------ROBOT----------")
+	#print("Tree", tree)
+        #pprint(vars(tree))
+	#print("Root") 
+	#pprint(vars(tree.root))
+	#print("Nodes") 
+	#pprint(vars(tree._nodes))
+       	print("Bbox", bbox)
         pose = Pose(position=Vector3(0, 0, -bbox.min.z))
-        fut = yield From(self.insert_robot(tree, pose, parents=parents))
+	
+	with open('output_from_evaluate_pair.txt', 'a') as out:
+		out.write("-------------ROBOT----------")
+    		
+		out.write("Tree")
+		#out.write(tree)
+		pprint(vars(tree), stream=out)
+		out.write("Root") 
+		pprint(vars(tree.root), stream=out)
+	
+		#print("Nodes") 
+		#pprint(vars(tree._nodes))
+        	out.write("Bbox")
+		pprint(bbox, stream=out)
+        	out.write("\n\n\n\n\n")
+	fut = yield From(self.insert_robot(tree, pose, parents=parents))
         robot = yield From(fut)
 
         max_age = self.conf.evaluation_time + self.conf.warmup_time
