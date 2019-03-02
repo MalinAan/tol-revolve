@@ -9,7 +9,7 @@ class Robot(RvRobot):
     Class to manage a single robot
     """
 
-    def __init__(self, conf, name, tree, robot, position, time, battery_level=0.0, parents=None):
+    def __init__(self, conf, name, tree, robot, position, time, world, battery_level=0.0, parents=None):
         """
         :param conf:
         :param name:
@@ -37,6 +37,7 @@ class Robot(RvRobot):
         self.size = len(tree)
         self.battery_level = battery_level
         self.initial_charge = battery_level
+        self.world = world
 
     def will_mate_with(self, other):
         """
@@ -148,8 +149,27 @@ class Robot(RvRobot):
         d = 1.0 - (self.conf.fitness_size_discount * self.size)
 
         #v = d * (d_fac * self.displacement_velocity() + v_fac * self.velocity() + s_fac * self.size)
-        v = self.displacement_velocity()/(1.1 * self.size)
-	return v if v <= self.conf.fitness_limit else 0.0
+        #print("Size", self.size)
+        #ret = self.world.analyze_tree(self.tree)
+
+        #bbox = ret[1]
+        #ret = self.helper(self.tree)
+        #print("In fitness function ret", ret)
+        v = self.displacement_velocity()/(2* self.size)
+        #print("V", v)
+        #print("fitness limit", self.conf.fitness_limit)
+
+        return v if v <= self.conf.fitness_limit else 0.0
+
+    def helper(self, tree):
+        ret = yield From(self.world.analyze_tree(self.tree))
+        if ret is None or ret[0]:
+            print("Intersecting body parts: Miscarriage.")
+            raise Return(False)
+
+        print("Viable child created.")
+        raise Return(ret)
+
 
     def is_evaluated(self):
         """

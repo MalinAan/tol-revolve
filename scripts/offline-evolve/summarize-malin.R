@@ -90,7 +90,7 @@ plot1 <- ggplot(cdata, aes(births)) +
   xlab("# of births") +
   ylab("");
 
-pdf(paste(dirs, collapse="_vs_"))
+pdf(paste("PDFs/", paste(dirs, collapse="_vs_")))
 print(plot1)
 dev.off()
 

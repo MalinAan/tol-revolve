@@ -20,6 +20,7 @@ import itertools
 import logging
 import trollius
 from trollius import From, Return
+from pprint import pprint
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__))+'/../../')
 
@@ -225,6 +226,9 @@ class OfflineEvoManager(World):
         """
         :return:
         """
+	#print("Tree", tree)
+        #pprint(vars(tree))
+        #print("Bbox", bbox)
         data = yield From(super(OfflineEvoManager, self).get_snapshot_data())
         data.update(self._snapshot_data)
         raise Return(data)
@@ -240,7 +244,9 @@ class OfflineEvoManager(World):
         """
         # Pause the world just in case it wasn't already
         yield From(wait_for(self.pause(True)))
-
+       # print("Tree", tree)
+        #pprint(vars(tree))
+        #print("Bbox", bbox)
         pose = Pose(position=Vector3(0, 0, -bbox.min.z))
         fut = yield From(self.insert_robot(tree, pose, parents=parents))
         robot = yield From(fut)
