@@ -105,7 +105,8 @@ class Robot(RvRobot):
         :param csv_writer:
         :return:
         """
-        with open(details_file, 'w') as f:
+        #print("In write Robot bbox is", bbox)
+	with open(details_file, 'w') as f:
             f.write(self.robot.SerializeToString())
 
         row = [getattr(world, 'current_run', 0), self.robot.id,
