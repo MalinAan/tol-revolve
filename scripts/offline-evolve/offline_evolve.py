@@ -340,6 +340,21 @@ class OfflineEvoManager(World):
         print("--- Done producing generation. ---")
         raise Return(trees, bboxes, parent_pairs)
 
+   # def helper(tree):
+	#ret = yield From(self.analyze_tree(tree))
+        #if ret is None:
+             # Error already shown
+         #    print("ERROR ret is none!")
+	     #continue
+
+        #coll, bbox, robot = ret
+	#print(tree)
+        #if not coll:
+         #   raise Return(tree, robot, bbox)
+
+        #logger.error("Error in helper")
+        #raise Return(None)
+
     def log_generation(self, evo, generation, pairs, generation_eval_time=0):
         """
         :param evo: The evolution run
@@ -353,7 +368,10 @@ class OfflineEvoManager(World):
 
         go = self.csv_files['generations']['csv']
         do = self.csv_files['robot_details']['csv']
+	
         for robot, t_eval in pairs:
+	    print("ROBOT analyze_treeeeeeeeeeeeeee")
+	    
             robot_id = robot.robot.id
             root = robot.tree.root
             go.writerow([evo, generation, robot.robot.id, robot.velocity(),
