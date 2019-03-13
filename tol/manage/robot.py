@@ -9,7 +9,7 @@ class Robot(RvRobot):
     Class to manage a single robot
     """
 
-    def __init__(self, conf, name, tree, robot, position, time, world, battery_level=0.0, parents=None):
+    def __init__(self, conf, name, tree, robot, position, time, battery_level=0.0, parents=None):
         """
         :param conf:
         :param name:
@@ -37,7 +37,7 @@ class Robot(RvRobot):
         self.size = len(tree)
         self.battery_level = battery_level
         self.initial_charge = battery_level
-        self.world = world
+        #self.world = world
 
     def will_mate_with(self, other):
         """

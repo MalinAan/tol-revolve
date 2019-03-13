@@ -340,21 +340,27 @@ class OfflineEvoManager(World):
         print("--- Done producing generation. ---")
         raise Return(trees, bboxes, parent_pairs)
 
-   # def helper(tree):
-	#ret = yield From(self.analyze_tree(tree))
-        #if ret is None:
+    @trollius.coroutine
+    def helper(self, tree):
+	print("in helper")
+        ret = yield From(self.analyze_tree(tree))
+        if ret is None:
              # Error already shown
-         #    print("ERROR ret is none!")
-	     #continue
+             print("ERROR ret is none!")
+             #continue
 
-        #coll, bbox, robot = ret
-	#print(tree)
-        #if not coll:
-         #   raise Return(tree, robot, bbox)
+        coll, bbox, robot = ret
+        print(tree)
+	print("BBOX")
+	print(bbox)
+	#raise Return(bbox)
+        if bbox:
+            raise Return(bbox)
 
-        #logger.error("Error in helper")
-        #raise Return(None)
+        logger.error("Error in helper")
+        raise Return(None)
 
+    @trollius.coroutine
     def log_generation(self, evo, generation, pairs, generation_eval_time=0):
         """
         :param evo: The evolution run
@@ -371,7 +377,12 @@ class OfflineEvoManager(World):
 	
         for robot, t_eval in pairs:
 	    print("ROBOT analyze_treeeeeeeeeeeeeee")
-	    
+	    ret = yield From(self.helper(robot.tree))
+	    print(ret)
+	    #print(list(ret))
+	    #first, second = ret
+	    #print(first)
+	    #print(second)
             robot_id = robot.robot.id
             root = robot.tree.root
             go.writerow([evo, generation, robot.robot.id, robot.velocity(),
@@ -428,7 +439,8 @@ class OfflineEvoManager(World):
                 pairs = yield From(self.evaluate_population(trees, bboxes))
                 printnow("Done evaluating initial population...")
                 diff = time.time() - before
-                self.log_generation(evo, 0, pairs, diff)
+                yield From(self.log_generation(evo, 0, pairs, diff))
+		printnow("done with logging!")
                 gen_count += 1
 
             for generation in xrange(gen_start, conf.num_generations):
@@ -441,8 +453,11 @@ class OfflineEvoManager(World):
                 yield From(self.create_snapshot())
                 print("Created snapshot of experiment state")
 
-                # restart every n generations to avoid crash from memory leaks or similar
-                if gen_count==self.conf.restart_interval: #make this a parameter
+                
+		# restart every n generations to avoid crash from memory leaks or similar
+                print("gencount", gen_count)
+		print("self.conf.restart_interval", self.conf.restart_interval)
+		if gen_count==self.conf.restart_interval: #make this a parameter
                     print("Initiating scheduled shutdown and restart from snapshot...")
                     sys.exit(22)
                 gen_count += 1
@@ -469,6 +484,8 @@ class OfflineEvoManager(World):
                 if conf.disable_fitness:
                     random.shuffle(pairs)
                 else:
+		    print("in else")
+		    #Her har vi tilgang til pairs som sikkert innehar bbox! saa lag en metode i fitness til robot som taar inn den.
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
 
                 pairs = pairs[:conf.population_size]
@@ -477,7 +494,7 @@ class OfflineEvoManager(World):
                 diff = time.time() - before
                 printnow("Generation time: %.2f s." % diff)
 
-                self.log_generation(evo, generation, pairs, diff)
+                yield From(self.log_generation(evo, generation, pairs, diff))
 
 
             # Clear "restore" parameters
@@ -517,7 +534,7 @@ def select_parents(parents, conf):
     p2 = select_parent(list(parent for parent in parents if parent != p1), conf)
     return p1, p2
 
-
+world = None
 @trollius.coroutine
 def run():
     """
@@ -525,6 +542,7 @@ def run():
     """
     conf = parser.parse_args()
 
+    global world
     world = yield From(OfflineEvoManager.create(conf))
     yield From(world.run())
 

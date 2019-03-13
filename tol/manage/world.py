@@ -118,7 +118,7 @@ class World(WorldManager):
         :param parents:
         :return:
         """
-        return Robot(self.conf, robot_name, tree, robot, position, t, self,
+        return Robot(self.conf, robot_name, tree, robot, position, t,
                      battery_level=battery_level, parents=parents)
 
     @trollius.coroutine
