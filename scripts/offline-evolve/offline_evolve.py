@@ -161,7 +161,6 @@ class OfflineEvoManager(World):
         super(OfflineEvoManager, self).__init__(conf, _private)
 
         self._snapshot_data = {}
-
         # Output files
         csvs = {
             'generations': ['run', 'gen', 'robot_id', 'vel', 'dvel', 'fitness', 't_eval'],
@@ -325,7 +324,7 @@ class OfflineEvoManager(World):
             if self.conf.disable_selection:
                 p1, p2 = random.sample(parents, 2)
             else:
-                p1, p2 = select_parents(parents, self.conf)
+		p1, p2 = yield From(select_parents(parents, self.conf)) 
 
             for j in xrange(self.conf.max_mating_attempts):
                 pair = yield From(self.attempt_mate(p1, p2))
@@ -485,6 +484,7 @@ class OfflineEvoManager(World):
                     random.shuffle(pairs)
                 else:
 		    print("in else")
+		    print [bbox for bbox in child_bboxes]
 		    #Her har vi tilgang til pairs som sikkert innehar bbox! saa lag en metode i fitness til robot som taar inn den.
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
 
@@ -513,7 +513,7 @@ class OfflineEvoManager(World):
             if self.csv_files[k]['file']:
                 self.csv_files[k]['file'].close()
 
-
+@trollius.coroutine
 def select_parent(parents, conf):
     """
     Select a parent using a binary tournament.
@@ -521,18 +521,22 @@ def select_parent(parents, conf):
     :param conf: Configuration object
     :return:
     """
-    return sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1]
+    parents_random_sample = random.sample(parents, conf.tournament_size)
+    ret = yield From(world.helper(parents_random_sample[0].tree))
+    print("IN SELECT PAREEEEEEEEEEEEEEEEEEEEEEEEEEEEENT")
+    print(ret)
+    raise Return(sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1])
 
-
+@trollius.coroutine
 def select_parents(parents, conf):
     """
     :param parents:
     :param conf: Configuration object
     :return:
     """
-    p1 = select_parent(parents, conf)
-    p2 = select_parent(list(parent for parent in parents if parent != p1), conf)
-    return p1, p2
+    p1 = yield From(select_parent(parents, conf))
+    p2 = yield From(select_parent(list(parent for parent in parents if parent != p1), conf))
+    raise Return(p1, p2)
 
 world = None
 @trollius.coroutine
