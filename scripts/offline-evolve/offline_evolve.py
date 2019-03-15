@@ -341,7 +341,7 @@ class OfflineEvoManager(World):
 
     @trollius.coroutine
     def helper(self, tree):
-	print("in helper")
+        #print("in helper")
         ret = yield From(self.analyze_tree(tree))
         if ret is None:
              # Error already shown
@@ -349,9 +349,9 @@ class OfflineEvoManager(World):
              #continue
 
         coll, bbox, robot = ret
-        print(tree)
-	print("BBOX")
-	print(bbox)
+        #print(tree)
+        #print("BBOX")
+        #print(bbox)
 	#raise Return(bbox)
         if bbox:
             raise Return(bbox)
@@ -375,15 +375,17 @@ class OfflineEvoManager(World):
         do = self.csv_files['robot_details']['csv']
 	
         for robot, t_eval in pairs:
-	    print("ROBOT analyze_treeeeeeeeeeeeeee")
+            #print("ROBOT analyze_treeeeeeeeeeeeeee")
 	    ret = yield From(self.helper(robot.tree))
-	    print(ret)
+            #print(ret)
 	    #print(list(ret))
 	    #first, second = ret
 	    #print(first)
 	    #print(second)
             robot_id = robot.robot.id
             root = robot.tree.root
+            #print("BBOX-fitnes from one robot", robot.fitness_bbox(ret))
+            #print("Regular fitness", robot.fitness())
             go.writerow([evo, generation, robot.robot.id, robot.velocity(),
                          robot.displacement_velocity(), robot.fitness(), t_eval])
 
@@ -454,8 +456,8 @@ class OfflineEvoManager(World):
 
                 
 		# restart every n generations to avoid crash from memory leaks or similar
-                print("gencount", gen_count)
-		print("self.conf.restart_interval", self.conf.restart_interval)
+                #print("gencount", gen_count)
+                #print("self.conf.restart_interval", self.conf.restart_interval)
 		if gen_count==self.conf.restart_interval: #make this a parameter
                     print("Initiating scheduled shutdown and restart from snapshot...")
                     sys.exit(22)
@@ -483,8 +485,8 @@ class OfflineEvoManager(World):
                 if conf.disable_fitness:
                     random.shuffle(pairs)
                 else:
-		    print("in else")
-		    print [bbox for bbox in child_bboxes]
+                    # print("in else")
+                    #print [bbox for bbox in child_bboxes]
 		    #Her har vi tilgang til pairs som sikkert innehar bbox! saa lag en metode i fitness til robot som taar inn den.
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
 
@@ -524,7 +526,15 @@ def select_parent(parents, conf):
     parents_random_sample = random.sample(parents, conf.tournament_size)
     ret = yield From(world.helper(parents_random_sample[0].tree))
     print("IN SELECT PAREEEEEEEEEEEEEEEEEEEEEEEEEEEEENT")
-    print(ret)
+    #print(ret)
+    #random_sample = random.sample(parents, conf.tournament_size);
+    samples_with_bbox = []
+    for index, robot in enumerate(parents_random_sample):
+        bbox = yield From(world.helper(robot.tree))
+        robot_with_bbox = {"bbox": bbox, "robot":robot}
+        samples_with_bbox.append(robot_with_bbox)
+    sorted_samples = sorted (samples_with_bbox, key=lambda o: o["robot"].fitness_bbox(o["bbox"]))
+    print("SORTED SAMPLEEEEEEE", sorted_samples[-1])
     raise Return(sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1])
 
 @trollius.coroutine
