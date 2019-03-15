@@ -161,6 +161,13 @@ class Robot(RvRobot):
 
         return v if v <= self.conf.fitness_limit else 0.0
 
+    def fitness_bbox(self, bbox):
+	print("Fitness bbox")
+        body_length = bbox.max.x - bbox.min.x
+        fitness = self.displacement_velocity()/body_length
+        print("FITNESS", fitness)
+        return fitness
+
     def helper(self, tree):
         ret = yield From(self.world.analyze_tree(self.tree))
         if ret is None or ret[0]:
