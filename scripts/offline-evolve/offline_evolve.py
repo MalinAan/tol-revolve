@@ -485,11 +485,19 @@ class OfflineEvoManager(World):
                 if conf.disable_fitness:
                     random.shuffle(pairs)
                 else:
-                    # print("in else")
+                    print("in else")
                     #print [bbox for bbox in child_bboxes]
 		    #Her har vi tilgang til pairs som sikkert innehar bbox! saa lag en metode i fitness til robot som taar inn den.
+                    samples_with_bbox = []
+                    for index, pair in enumerate(pairs):
+                        robot_with_bbox = {"bbox": child_bboxes[index], "pair":pair}
+                        samples_with_bbox.append(robot_with_bbox)
+                    print("LEN", len(samples_with_bbox))
+                    print("sorted samples:", samples_with_bbox)
+                    sorted_samples = sorted (samples_with_bbox, key=lambda o: o["pair"][0].fitness_bbox(o["bbox"]))
+                    print("PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIR SORTED SAMPLEEEEEEE", sorted_samples[-1])
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
-
+                    
                 pairs = pairs[:conf.population_size]
 
                 #display elapsed time of 1 generation
