@@ -376,7 +376,8 @@ class OfflineEvoManager(World):
 	
         for robot, t_eval in pairs:
             #print("ROBOT analyze_treeeeeeeeeeeeeee")
-	    ret = yield From(self.helper(robot.tree))
+	    bbox = yield From(self.helper(robot.tree))
+            fitness_bbox = robot.fitness_bbox(bbox)
             #print(ret)
 	    #print(list(ret))
 	    #first, second = ret
@@ -387,7 +388,7 @@ class OfflineEvoManager(World):
             #print("BBOX-fitnes from one robot", robot.fitness_bbox(ret))
             #print("Regular fitness", robot.fitness())
             go.writerow([evo, generation, robot.robot.id, robot.velocity(),
-                         robot.displacement_velocity(), robot.fitness(), t_eval])
+                         robot.displacement_velocity(), fitness_bbox, t_eval])
 
             # TODO Write this once when robot is written instead
             counter = 0
@@ -494,8 +495,13 @@ class OfflineEvoManager(World):
                         samples_with_bbox.append(robot_with_bbox)
                     print("sorted samples:", samples_with_bbox)
                     sorted_samples = sorted (samples_with_bbox, key=lambda o: o["pair"][0].fitness_bbox(o["bbox"]))
-                    print("PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIR SORTED SAMPLEEEEEEE", sorted_samples[-1])
-                    pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
+                    #print("PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIR SORTED SAMPLEEEEEEE", sorted_samples[-1])
+                    pairs = []
+                    for sample in sorted_samples:
+                        pairs.append(sample["pair"])
+                     
+                    #Feil; pairs = sorted_samples
+                    #pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
                     
                 pairs = pairs[:conf.population_size]
 
@@ -542,8 +548,9 @@ def select_parent(parents, conf):
         samples_with_bbox.append(robot_with_bbox)
     sorted_samples = sorted (samples_with_bbox, key=lambda o: o["robot"].fitness_bbox(o["bbox"]))
     print("SORTED SAMPLEEEEEEE", sorted_samples[-1])
-    raise Return(sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1])
-
+    raise Return(sorted_samples[-1]["robot"])
+   #raise Return(sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1])
+   
 @trollius.coroutine
 def select_parents(parents, conf):
     """
