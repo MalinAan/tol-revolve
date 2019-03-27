@@ -121,6 +121,13 @@ class Robot(RvRobot):
 
         csv_writer.writerow(row)
 
+    def fitness_bbox(self, bbox):
+        body_length = bbox.max.x - bbox.min.x
+        fitness = self.displacement_velocity()/body_length
+        print("Body length", body_length)
+        print("FITNESS", fitness)
+        return fitness
+
     def fitness(self):
         """
         Fitness is proportional to both the displacement and absolute

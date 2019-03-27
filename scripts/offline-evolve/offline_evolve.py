@@ -302,13 +302,15 @@ class OfflineEvoManager(World):
         raise Return(pairs)
 
     @trollius.coroutine
-    def produce_generation(self, parents):
+    def produce_generation(self, triples):
         """
         Produce the next generation of robots from
         the current.
         :param parents:
         :return:
         """
+
+        parents = [p[0] for p in triples]
         printnow("--- Producing generation ---")
         trees = []
         bboxes = []
@@ -319,7 +321,7 @@ class OfflineEvoManager(World):
             if self.conf.disable_selection:
                 p1, p2 = random.sample(parents, 2)
             else:
-                p1, p2 = select_parents(parents, self.conf)
+                p1, p2 = select_parents(triples, self.conf)
 
             for j in xrange(self.conf.max_mating_attempts):
                 pair = yield From(self.attempt_mate(p1, p2))
@@ -334,7 +336,7 @@ class OfflineEvoManager(World):
         print("--- Done producing generation. ---")
         raise Return(trees, bboxes, parent_pairs)
 
-    def log_generation(self, evo, generation, pairs, generation_eval_time=0):
+    def log_generation(self, evo, generation, triples, generation_eval_time=0):
         """
         :param evo: The evolution run
         :param generation:
@@ -347,11 +349,11 @@ class OfflineEvoManager(World):
 
         go = self.csv_files['generations']['csv']
         do = self.csv_files['robot_details']['csv']
-        for robot, t_eval in pairs:
+        for robot, t_eval, bbox in triples:
             robot_id = robot.robot.id
             root = robot.tree.root
             go.writerow([evo, generation, robot.robot.id, robot.velocity(),
-                         robot.displacement_velocity(), robot.fitness(), t_eval])
+                         robot.displacement_velocity(), robot.fitness_bbox(bbox), t_eval])
 
             # TODO Write this once when robot is written instead
             counter = 0
@@ -380,6 +382,10 @@ class OfflineEvoManager(World):
             evo_start = data['evo_start']
             gen_start = data['gen_start']
             pairs = data['local_pairs']
+            triples = data['local_triples']
+            print("\n\n")
+            print("TRIPLES", triples)
+            print("LOCAL PAIRS", pairs)
         else:
             print ("Starting a fresh experiment")
             # Start at the specified run (default is 0)
@@ -387,6 +393,7 @@ class OfflineEvoManager(World):
             self.robot_id = conf.robot_id_stride * conf.start_run
             gen_start = 1
             pairs = None
+            triples = None
         gen_count=0
 
         #the main run loop
@@ -402,9 +409,14 @@ class OfflineEvoManager(World):
                 trees, bboxes = yield From(self.generate_population(conf.population_size))
                 printnow("Evaluating initial population...")
                 pairs = yield From(self.evaluate_population(trees, bboxes))
+                triples = []
+                for index, p in enumerate(pairs):
+                    #pair is (robot, time)
+                    triples.append((p[0], p[1], bboxes[index]))
+
                 printnow("Done evaluating initial population...")
                 diff = time.time() - before
-                self.log_generation(evo, 0, pairs, diff)
+                self.log_generation(evo, 0, triples, diff)
                 gen_count += 1
 
             for generation in xrange(gen_start, conf.num_generations):
@@ -412,7 +424,8 @@ class OfflineEvoManager(World):
                 self._snapshot_data = {
                     "local_pairs": pairs,
                     "gen_start": generation,
-                    "evo_start": evo
+                    "evo_start": evo,
+                    "local_triples": triples,
                 }
                 yield From(self.create_snapshot())
                 print("Created snapshot of experiment state")
@@ -432,28 +445,37 @@ class OfflineEvoManager(World):
                         self.generate_population(conf.population_size))
                     parent_pairs = None
                 else:
-                    child_trees, child_bboxes, parent_pairs = yield From(self.produce_generation(robots))
+                    child_trees, child_bboxes, parent_pairs = yield From(self.produce_generation(triples))
 
                 child_pairs = yield From(self.evaluate_population(child_trees, child_bboxes, parent_pairs))
+                child_triples = []
+                for index, p in enumerate(child_pairs):
+                    #pair is (robot, time)
+                    child_triples.append((p[0], p[1], child_bboxes[index]))
 
                 if conf.keep_parents:
                     pairs += child_pairs
+                    triples += child_triples
                 else:
                     pairs = child_pairs
+                    triples = child_triples
 
                 # Sort the bots and reduce to population size
                 if conf.disable_fitness:
                     random.shuffle(pairs)
                 else:
                     pairs = sorted(pairs, key=lambda r: r[0].fitness(), reverse=True)
+                    triples = sorted(triples, key=lambda r: r[0].fitness(), reverse=True)
+                    #triples = sorted(triples, key=lambda r: r[0].fitness_bbox(r[3]), reverse=True)
 
                 pairs = pairs[:conf.population_size]
+                triples = triples[:conf.population_size]
 
                 #display elapsed time of 1 generation
                 diff = time.time() - before
                 printnow("Generation time: %.2f s." % diff)
 
-                self.log_generation(evo, generation, pairs, diff)
+                self.log_generation(evo, generation, triples, diff)
 
 
             # Clear "restore" parameters
@@ -473,24 +495,28 @@ class OfflineEvoManager(World):
                 self.csv_files[k]['file'].close()
 
 
-def select_parent(parents, conf):
+def select_parent(triples, conf):
     """
     Select a parent using a binary tournament.
     :param parents:
     :param conf: Configuration object
     :return:
     """
-    return sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1]
+    parents = [p[0] for p in triples]
+    return sorted(random.sample(triples, conf.tournament_size), key=lambda r: r[0].fitness_bbox(r[2]))[-1][0]
+    #return sorted(random.sample(parents, conf.tournament_size), key=lambda r: r.fitness())[-1]
 
 
-def select_parents(parents, conf):
+def select_parents(triples, conf):
     """
     :param parents:
     :param conf: Configuration object
     :return:
     """
-    p1 = select_parent(parents, conf)
-    p2 = select_parent(list(parent for parent in parents if parent != p1), conf)
+    parents = [p[0] for p in triples]
+    p1 = select_parent(triples, conf)
+    p2 = select_parent(list(individual for individual in triples if triples[0] != p1), conf)
+    #p2 = select_parent(list(parent for parent in parents if parent != p1), conf)
     return p1, p2
 
 
