@@ -242,7 +242,7 @@ class OfflineEvoManager(World):
         yield From(wait_for(self.pause(True)))
 
         pose = Pose(position=Vector3(0, 0, -bbox.min.z))
-        fut = yield From(self.insert_robot(tree, pose, parents=parents))
+        fut = yield From(self.insert_robot(tree, pose, parents=parents, bbox=bbox))
         robot = yield From(fut)
 
         max_age = self.conf.evaluation_time + self.conf.warmup_time

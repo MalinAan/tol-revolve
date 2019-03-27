@@ -96,16 +96,17 @@ class Robot(RvRobot):
         """
         return ['run', 'id', 't_birth', 'parent1', 'parent2', 'nparts', 'x', 'y', 'z',
                 'extremity_count', 'joint_count', 'motor_count', 'inputs', 'outputs', 'hidden',
-                'conn']
+                'conn', "bbox_min_x", "bbox_min_y", "bbox_min_z", "bbox_max_x", "bbox_max_y", "bbox_max_z"]
 
-    def write_robot(self, world, details_file, csv_writer):
+    def write_robot(self, world, details_file, csv_writer, bbox=None):
         """
         :param world:
         :param details_file:
         :param csv_writer:
         :return:
         """
-        with open(details_file, 'w') as f:
+        #print("In write Robot bbox is", bbox)
+	with open(details_file, 'w') as f:
             f.write(self.robot.SerializeToString())
 
         row = [getattr(world, 'current_run', 0), self.robot.id,
@@ -118,7 +119,8 @@ class Robot(RvRobot):
         inputs, outputs, hidden = root.io_count(recursive=True)
         row += [count_extremities(root), count_joints(root), count_motors(root),
                 inputs, outputs, hidden, count_connections(root)]
-
+	if bbox:
+		row += [bbox.min.x, bbox.min.y, bbox.min.z, bbox.max.x, bbox.max.y, bbox.max.z]
         csv_writer.writerow(row)
 
     def fitness_bbox(self, bbox):
