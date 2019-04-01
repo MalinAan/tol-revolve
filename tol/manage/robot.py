@@ -124,7 +124,7 @@ class Robot(RvRobot):
         csv_writer.writerow(row)
 
     def fitness_bbox(self, bbox):
-        body_length = bbox.max.x - bbox.min.x
+        body_length = max((bbox.max.x - bbox.min.x), (bbox.max.y - bbox.min.y))
         fitness = self.displacement_velocity()/body_length
         print("Body length", body_length)
         print("FITNESS", fitness)
