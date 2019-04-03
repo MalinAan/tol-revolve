@@ -40,12 +40,12 @@ def get_immediate_subdirectories(a_dir):
     return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
 
 data_lists = {}
-for folder in get_immediate_subdirectories("output"):
+for folder in get_immediate_subdirectories(sys.argv[1]):
     print folder
     data_lists[folder]=[]
     csv_files = ["generations.csv","robots.csv"] #the rest is hardcoded for these two files for now
     for datafile in csv_files:
-        fn = os.path.join("output",folder,datafile)
+        fn = os.path.join(sys.argv[1],folder,datafile)
         # print fn
         data_lists[folder].append(pd.read_csv(fn))
 print list(data_lists)

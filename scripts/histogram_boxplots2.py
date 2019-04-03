@@ -50,8 +50,9 @@ for folder in get_immediate_subdirectories(sys.argv[1]):
     data_lists[folder]=[]
     csv_files = ["generations.csv","robots.csv"] #the rest is hardcoded for these two files for now
     for datafile in csv_files:
-        fn = os.path.join("output",folder,datafile)
-        # print fn
+        #fn = os.path.join("output",folder,datafile)
+	fn = os.path.join(sys.argv[1], folder,datafile)        
+	# print fn
         data_lists[folder].append(pd.read_csv(fn))
 print list(data_lists)
 
