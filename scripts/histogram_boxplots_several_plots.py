@@ -14,7 +14,10 @@ from string import Template
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 import numpy as np
-import scipy.stats
+from scipy import stats
+import statistics
+import math
+
 
 
 import pandas as pd
@@ -76,6 +79,19 @@ for exp in data_lists.keys():
     print "number of last generations extracted: ", last_gens[exp]['run_x'].nunique()
     print "number of solutions over all runs: ",  len(last_gens[exp])
 
+def print_stats(data, exp, measure):
+    print("Experiment: %s", exp)
+    print("Measure %s", measure)
+    data = np.array(data)
+    desc = stats.describe(data)
+    print('# of observations:', desc.nobs)
+    print('min: %d\nmax: %d' % desc.minmax)
+    print('mean: %.1f' % desc.mean)
+    print('variance: %.1f' % desc.variance)
+    print('stdev: %.1f' % math.sqrt(desc.variance))
+    print('median: %.1f' % statistics.median(data))
+
+
 #now try to merge all exps
 comb = pd.concat(last_gens)
 
@@ -106,6 +122,7 @@ f, axarr = plt.subplots(len(measures),2)
 nbins=30
 coord=0
 for m in measures: #one plot for each measure
+    
     boxd = []
     m_range=[ float(comb.loc[:,[m]].min()), float(comb.loc[:,[m]].max()) ]
     print m
@@ -124,6 +141,7 @@ for m in measures: #one plot for each measure
     for exp in last_gens.keys(): #combine plots for each experiment
         #plot histogram of last gen
         plot_gens=last_gens[exp][m]
+        print_stats(last_gens[exp][m], exp, m)
         boxd.append(plot_gens)
         axarr[coord,0].hist(plot_gens, int(nbins), m_range, alpha=0.5, label=exp, normed=1)
         #axarr[coord,0].set_title(m)
@@ -142,7 +160,7 @@ for m in measures: #one plot for each measure
     hist_fig.savefig((new_dirname + '/hist_'+m+ "_" + exp_name +".pdf"))
 
     #plot boxplot of last gen
-    z, p = scipy.stats.mannwhitneyu(boxd[0], boxd[1], alternative="two-sided")
+    z, p = stats.mannwhitneyu(boxd[0], boxd[1], alternative="two-sided")
     print "mwu (z,p): ", z,p
 
     ax = axarr[coord,1]
