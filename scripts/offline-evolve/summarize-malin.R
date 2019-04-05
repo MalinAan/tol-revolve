@@ -8,7 +8,12 @@ library(plyr)
 library(reshape)
 
 read_dir_data <- function(odir, prefix) {
+  print("HALLO")
+  print(odir)
+  print(prefix)
   tdata = read.csv(paste(prefix, odir, "/generations.csv", sep=""), head=TRUE);
+  print(odir)
+  print(prefix)
   tdata$exp = as.factor(odir);
   if (tdata[1,]$exp == "plus-gradual") {
     tdata$births = tdata$gen + 15;
@@ -22,7 +27,7 @@ read_dir_data <- function(odir, prefix) {
 }
 
 dirs = list.files("./output");
-data = do.call(rbind, lapply(dirs, read_dir_data, prefix="./output/"));
+data = do.call(rbind.fill, lapply(dirs, read_dir_data, prefix="./output/"));
 
 # Unify fitness calculation
 data$fitness = 5*data$dvel + data$vel;
@@ -90,7 +95,7 @@ plot1 <- ggplot(cdata, aes(births)) +
   xlab("# of births") +
   ylab("");
 
-pdf(paste(dirs, collapse="_vs_"))
+pdf("3april") #paste(dirs, collapse="_vs_"))
 print(plot1)
 dev.off()
 
@@ -107,3 +112,4 @@ exp_states = ddply(data, ~exp+run, summarise, cur_gen=max(gen));
 exp_states = exp_states[order(exp_states$exp, -exp_states$run),];
 
 exp_states
+
