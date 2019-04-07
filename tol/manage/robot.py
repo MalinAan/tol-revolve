@@ -125,7 +125,7 @@ class Robot(RvRobot):
 
     def fitness_bbox(self, bbox):
         body_length = bbox.max.x - bbox.min.x
-        fitness = self.displacement_velocity()/body_length
+        fitness = self.speed_x_direction()/body_length
         print("Body length", body_length)
         print("FITNESS", fitness)
         return fitness
