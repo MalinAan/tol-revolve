@@ -2,6 +2,7 @@ from sdfbuilder.math import Vector3
 from revolve.util import Time
 from revolve.angle import Robot as RvRobot
 from ..util.analyze import count_joints, count_motors, count_connections, count_extremities
+import math
 
 
 class Robot(RvRobot):
@@ -124,9 +125,11 @@ class Robot(RvRobot):
         csv_writer.writerow(row)
 
     def fitness_bbox(self, bbox):
-        body_length = bbox.max.x - bbox.min.x
-        fitness = self.displacement_velocity()/body_length
-        print("Body length", body_length)
+        body_length_x = bbox.max.x - bbox.min.x
+        body_length_y = bbox.max.y - bbox.min.y
+        diagonal_bbox = math.sqrt((pow(body_length_x, 2) + pow(body_length_y, 2)))
+        fitness = self.displacement_velocity()/diagonal_bbox
+        print("Diagonal", diagonal_bbox)
         print("FITNESS", fitness)
         return fitness
 
