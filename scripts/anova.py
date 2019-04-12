@@ -65,7 +65,8 @@ for exp in data_lists.keys():
     #not perfect, should not duplicate the run columns
     merged = pd.merge(data_lists[exp][0], data_lists[exp][1], left_on=['robot_id'], right_on=['id'])
     
-    merged["world"] = exp
+    print("world cut ", exp[0:6])
+    merged["world"] = exp[0:6]
     if(exp == "world0_old_fitness"):
         print ("LIST", list(merged))
         print("MERGED", merged)
