@@ -154,16 +154,17 @@ for m in measures: #one plot for each measure
     boxd = []
     for exp in sorted(last_gens.keys()): #combine plots for each experiment
         #plot histogram of last gen
+        label = ("Environment " + str((int(exp[5]) + 1)))
         plot_gens=last_gens[exp][m]
         boxd.append(plot_gens)
-        labels.append(exp)
-        print("labels", labels)
-        print("Index labels", labels.index(exp))
-        print("boxd on index", boxd[labels.index(exp)])
-        print("plotgens", plot_gens)
-        axarr[coord,0].hist(plot_gens, int(nbins), m_range, alpha=0.5, label=exp, normed=1)
+        labels.append(label)
+        #print("labels", labels)
+        #print("Index labels", labels.index(exp))
+        #print("boxd on index", boxd[labels.index(exp)])
+        #print("plotgens", plot_gens)
+        axarr[coord,0].hist(plot_gens, int(nbins), m_range, alpha=0.5, label=label, normed=1)
         #axarr[coord,0].set_title(m)
-        ax_hist.hist(plot_gens, int(nbins), m_range, alpha=0.5, label=exp, normed=1)
+        ax_hist.hist(plot_gens, int(nbins), m_range, alpha=0.5, label=label, normed=1)
         if coord==0:
             axarr[coord,0].legend()
 
