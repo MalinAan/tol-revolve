@@ -40,44 +40,48 @@ def stars(p):
 # read from files
 ############################
 def get_immediate_subdirectories(a_dir):
+
     return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
 
-data_lists = {}
-for folder in get_immediate_subdirectories(sys.argv[1]):
-    print folder
-    data_lists[folder]=[]
-    csv_files = ["generations.csv","robots.csv"] #the rest is hardcoded for these two files for now
-    for datafile in csv_files:
-        fn = os.path.join(sys.argv[1],folder,datafile)
-        # print fn
-        data_lists[folder].append(pd.read_csv(fn))
-print list(data_lists)
-        
+def get_data_list(exp_name):
+    data_lists = {}
+    for folder in get_immediate_subdirectories(exp_name):
+        data_lists[folder]=[]
+        csv_files = ["generations.csv","robots.csv"] #the rest is hardcoded for these two files for now
+        for datafile in csv_files:
+            fn = os.path.join(exp_name,folder,datafile)
+            data_lists[folder].append(pd.read_csv(fn, index_col=False))
 
-##############################################
-#merge and extract first and last generations
-##############################################
-last_gens = {}
-first_gens = {}
-for exp in data_lists.keys():
-    print exp
-    #merging the two data frames. Assuming only two now
-    #not perfect, should not duplicate the run columns
-    merged = pd.merge(data_lists[exp][0], data_lists[exp][1], left_on=['robot_id'], right_on=['id'])
-    print list(merged)
+    return data_lists
 
-    #find and extract last and first generations
-    max_gen = merged['gen'].idxmax()
-    last_gen_idx=merged['gen'][max_gen]
-    print "last gen:", last_gen_idx
-    last_gens[exp]=merged[merged['gen']==last_gen_idx]
-    first_gens[exp]=merged[merged['gen']==0]
 
-    #checking the data
-    print "run count: ", merged['run_x'].nunique()
-    print "number of first generations extracted: ", last_gens[exp]['run_x'].nunique()
-    print "number of last generations extracted: ", last_gens[exp]['run_x'].nunique()
-    print "number of solutions over all runs: ",  len(last_gens[exp])
+def get_last_generation(data_lists, fitness_function):
+    last_gens = {}
+    first_gens = {}
+    #print("keys", data_lists.keys())
+    #print("0", data_lists["world0_old_fitness"][0])
+    #print("0", data_lists["world0_old_fitness"][1])
+    for exp in data_lists.keys():
+        merged = pd.merge(data_lists[exp][0], data_lists[exp][1], left_on=['robot_id'], right_on=['id'])
+
+
+        merged["fitness_function"] = fitness_function
+        merged["world"] = exp[0:6]
+        #if(exp == "world0_old_fitness"):
+            #print ("LIST", list(merged))
+            #print("MERGED", merged)
+        #find and extract last and first generations
+        max_gen = merged['gen'].idxmax()
+        last_gen_idx=merged['gen'][max_gen]
+        #print "last gen:", last_gen_idx
+        last_gens[exp]=merged[merged['gen']==last_gen_idx]
+        first_gens[exp]=merged[merged['gen']==0]
+    return last_gens
+
+fitness_function = sys.argv[1]
+data_lists = get_data_list(fitness_function)
+last_gens = get_last_generation(data_lists, fitness_function)
+
 
 def print_stats(data, exp, measure):
     print("Experiment: %s", exp)
@@ -122,7 +126,7 @@ f, axarr = plt.subplots(len(measures),2)
 nbins=30
 coord=0
 for m in measures: #one plot for each measure
-    
+
     boxd = []
     m_range=[ float(comb.loc[:,[m]].min()), float(comb.loc[:,[m]].max()) ]
     print m
@@ -136,8 +140,8 @@ for m in measures: #one plot for each measure
     hist_fig = plt.figure(figsize=(14, 10))
     hist_fig.suptitle(('Histogram for ' + m) , fontsize=20, fontweight='bold')
     ax_hist = hist_fig.add_subplot(1,1,1)
-    
-        
+
+
     for exp in last_gens.keys(): #combine plots for each experiment
         #plot histogram of last gen
         plot_gens=last_gens[exp][m]
@@ -146,17 +150,17 @@ for m in measures: #one plot for each measure
         axarr[coord,0].hist(plot_gens, int(nbins), m_range, alpha=0.5, label=exp, normed=1)
         #axarr[coord,0].set_title(m)
         ax_hist.hist(plot_gens, int(nbins), m_range, alpha=0.5, label=exp, normed=1)
-        if coord==0: 
+        if coord==0:
             axarr[coord,0].legend()
-            
 
-        
-        
-        
+
+
+
+
     ax_hist.legend(fontsize=18)
     for item in ([ax_hist.xaxis.label, ax_hist.yaxis.label] + ax_hist.get_xticklabels() + ax_hist.get_yticklabels()):
         item.set_fontsize(15)
-    
+
     hist_fig.savefig((new_dirname + '/hist_'+m+ "_" + exp_name +".pdf"))
 
     #plot boxplot of last gen
