@@ -58,17 +58,30 @@ def get_data_list(exp_name):
 def get_last_generation(data_lists, fitness_function):
     last_gens = {}
     first_gens = {}
-
+    #print("keys", data_lists.keys())
+    #print("0", data_lists["world0_old_fitness"][0])
+    #print("0", data_lists["world0_old_fitness"][1])
+    #data_lists = sorted(data_lists.items(), key =
+    #         lambda kv:(kv[1], kv[0]))
+    #data_lists.sort(key=lambda x: x[0])
+    print("DATAlists keys", data_lists.keys())
+    print("DATAlists sorted", sorted(data_lists.keys()))
     for exp in sorted(data_lists.keys()):
         merged = pd.merge(data_lists[exp][0], data_lists[exp][1], left_on=['robot_id'], right_on=['id'])
 
 
         merged["fitness_function"] = fitness_function
         merged["world"] = exp[0:6]
+        #if(exp == "world0_old_fitness"):
+            #print ("LIST", list(merged))
+            #print("MERGED", merged)
+        #find and extract last and first generations
         max_gen = merged['gen'].idxmax()
         last_gen_idx=merged['gen'][max_gen]
+        #print "last gen:", last_gen_idx
         last_gens[exp]=merged[merged['gen']==last_gen_idx]
         first_gens[exp]=merged[merged['gen']==0]
+        #print("LAST gens temp", last_gens)
     return last_gens
 
 fitness_function = sys.argv[1]
@@ -90,11 +103,24 @@ def print_stats(data, exp, measure):
 
 
 
+#now try to merge all exps
 comb = pd.concat(last_gens)
+#print("COMB", comb)
+#print("LAST_gens", last_gens)
 
+#important! how to select by indices and rows
+# print comb.loc['world1',['fitness']]
+# print comb.loc[:,['fitness']]
 
+#need to read up on pandas to get the hang of things!
+
+######################################
+# plotting
+######################################
 plt.close('all')
 measures=['fitness','vel','dvel','joint_count','extremity_count','nparts']
+#measures=['fitness','vel','dvel','joint_count','extremity_count','nparts','t_eval']
+#measures=['joint_count','nparts']
 
 exp_folder= sys.argv[1]
 exp_name = exp_folder[:-1]
@@ -122,7 +148,7 @@ for m in measures: #one plot for each measure
 
     hist_fig = plt.figure(figsize=(14, 10))
     hist_fig.suptitle(('Histogram for ' + m) , fontsize=20, fontweight='bold')
-    ax_hist = hist_        #axarr[coord,0].set_title(m)fig.add_subplot(1,1,1)
+    ax_hist = hist_fig.add_subplot(1,1,1)
 
     labels = []
     boxd = []
@@ -156,6 +182,8 @@ for m in measures: #one plot for each measure
     boxplot_fig = plt.figure(figsize=(14, 10))
     boxplot_fig.suptitle(('Boxplot for ' + m) , fontsize=20, fontweight='bold')
     ax_boxplot = boxplot_fig.add_subplot(1,1,1)
+    print("LABELS", last_gens.keys())
+    print("BOXPLOTS", boxd)
     ax_boxplot.boxplot(boxd, labels=labels, autorange=True)
     for item in ([ax_boxplot.xaxis.label, ax_boxplot.yaxis.label] + ax_boxplot.get_xticklabels() + ax_boxplot.get_yticklabels()):
         item.set_fontsize(15)
@@ -180,3 +208,21 @@ f.subplots_adjust(hspace=0.8)
 #plt.show()
 f.set_size_inches(8,16) #arbitrary paper size
 plt.savefig((new_dirname + "/measures_hist_box_"+ exp_name +".pdf"))
+
+"""for index, m in enumerate(measures):
+    hist_extent = axarr[index, 0].get_window_extent().transformed(f.dpi_scale_trans.inverted())
+    f.savefig(('hist_'+m), bbox_inches=hist_extent.expanded(1.1, 1.2))
+
+    boxplot_extent = axarr[index, 1].get_window_extent().transformed(f.dpi_scale_trans.inverted())
+    f.savefig(('boxplot_'+m), bbox_inches=boxplot_extent.expanded(1.1, 1.2))
+
+    # Pad the saved area by 10% in the x-direction and 20% in the y-direction
+    #f.savefig('ax2_figure_expanded.png', bbox_inches=extent.expanded(1.1, 1.2))
+"""
+
+
+
+
+#good example of subplots:
+#https://matplotlib.org/examples/pylab_examples/subplots_demo.html#pylab-examples-subplots-demo
+# how to show in same plot?
