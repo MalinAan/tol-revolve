@@ -71,37 +71,33 @@ def get_last_generation(data_lists, fitness_function):
         first_gens[exp]=merged[merged['gen']==0]
     return last_gens
 
-fitness_function = sys.argv[1]
-data_lists = get_data_list(fitness_function)
-last_gens = get_last_generation(data_lists, fitness_function)
+
+frames = []
+for fitness_function in sys.argv[1:]:
+    data_lists = get_data_list(fitness_function)
+    last_gens = get_last_generation(data_lists, fitness_function)
+    fitness_func_frame = pd.concat(last_gens)
+    if 'bbox_max_x' in fitness_func_frame.columns:
+         fitness_func_frame = fitness_func_frame.drop(columns=['bbox_max_z', 'bbox_min_z', 'bbox_max_x', 'bbox_max_y', 'bbox_min_x', 'bbox_min_y'])
+    print("TYPE", type(fitness_func_frame))
+    frames.append(fitness_func_frame)
 
 
-def print_stats(data, exp, measure):
-    print("Experiment: %s", exp)
-    print("Measure %s", measure)
-    data = np.array(data)
-    desc = stats.describe(data)
-    print('# of observations:', desc.nobs)
-    print('min: %d\nmax: %d' % desc.minmax)
-    print('mean: %.1f' % desc.mean)
-    print('variance: %.1f' % desc.variance)
-    print('stdev: %.1f' % math.sqrt(desc.variance))
-    print('median: %.1f' % statistics.median(data))
-
-
-
+#print(frames[0])
+concated = pd.concat(frames, ignore_index=True)
+print("CONCATED\n", concated)
 comb = pd.concat(last_gens)
 
 
 plt.close('all')
-measures=['fitness','vel','dvel','joint_count','extremity_count','nparts']
+measures=['vel','dvel','joint_count','extremity_count','nparts']
 
-exp_folder= sys.argv[1]
+exp_folder = "Final_exp"
 exp_name = exp_folder[:-1]
 path = os.getcwd()
 new_dirname = exp_name + "_plots"
 print("NEW DIR", (path + "/" + new_dirname))
-os.mkdir((path + "/" + new_dirname))
+#os.mkdir((path + "/" + new_dirname))
 
 
 
@@ -115,33 +111,51 @@ for m in measures: #one plot for each measure
     print m
     print(m_range)
     #find a suitable number of bins for the measure
-    if last_gens[last_gens.keys()[0]][m].dtype == np.float64 :
-        nbins=30
-    else:
-        nbins = m_range[1] - m_range[0] + 1
+    #if last_gens[last_gens.keys()[0]][m].dtype == np.float64 :
+    #    nbins=30
+    #else:
+    #    nbins = m_range[1] - m_range[0] + 1
 
     hist_fig = plt.figure(figsize=(14, 10))
     hist_fig.suptitle(('Histogram for ' + m) , fontsize=20, fontweight='bold')
-    ax_hist = hist_        #axarr[coord,0].set_title(m)fig.add_subplot(1,1,1)
+    ax_hist = hist_fig.add_subplot(1,1,1)       #axarr[coord,0].set_title(m)fig.add_subplot(1,1,1)
 
     labels = []
     boxd = []
-    for exp in sorted(last_gens.keys()): #combine plots for each experiment
+    for index, exp in enumerate(sys.argv[1:]): #combine plots for each experiment
         #plot histogram of last gen
-        label = ("Environment " + str((int(exp[5]) + 1)))
-        plot_gens=last_gens[exp][m]
+        label = ("Fitness function " + str(index + 1) + " "+ exp)
+        plot_gens=frames[index]
         boxd.append(plot_gens)
         labels.append(label)
+        print(len(boxd))
+        """
         axarr[coord,0].hist(plot_gens, int(nbins), m_range, alpha=0.5, label=label, normed=1)
         ax_hist.hist(plot_gens, int(nbins), m_range, alpha=0.5, label=label, normed=1)
         if coord==0:
+            axarr[coord,0].legend()"""
+
+    df = concated
+    #df.groupby("fitness_function").plot.hist(column=m)
+
+    grouped = df.groupby('fitness_function')
+
+    for index, group in enumerate(grouped):
+        print("GROUP", group[1])
+        #axarr[coord,0].hist(group, int(nbins), m_range, alpha=0.5, label=label, normed=1)
+        label = labels[index]
+        ax_hist.hist(group[1][m], int(nbins), m_range, alpha=0.5, label=label, normed=1)
+        if coord==0:
             axarr[coord,0].legend()
 
+        """
 
-
-
-
+        figure()
+        matplotlib.pyplot.hist(group[1].N)
+        """
     ax_hist.legend(fontsize=18)
+    plt.show()
+
     for item in ([ax_hist.xaxis.label, ax_hist.yaxis.label] + ax_hist.get_xticklabels() + ax_hist.get_yticklabels()):
         item.set_fontsize(15)
 
@@ -151,28 +165,41 @@ for m in measures: #one plot for each measure
     z, p = stats.mannwhitneyu(boxd[0], boxd[1], alternative="two-sided")
     print "mwu (z,p): ", z,p
 
-    ax = axarr[coord,1]
+    #ax = axarr[coord,1]
+
+    df = concated
+    #print(frames)
+
+
 
     boxplot_fig = plt.figure(figsize=(14, 10))
-    boxplot_fig.suptitle(('Boxplot for ' + m) , fontsize=20, fontweight='bold')
+    boxplot_fig.suptitle(('Boxplot for ' + m) , fontsize=40, fontweight='bold')
     ax_boxplot = boxplot_fig.add_subplot(1,1,1)
-    ax_boxplot.boxplot(boxd, labels=labels, autorange=True)
+
+
+    #ax_boxplot.boxplot(boxd, labels=labels, autorange=True)
     for item in ([ax_boxplot.xaxis.label, ax_boxplot.yaxis.label] + ax_boxplot.get_xticklabels() + ax_boxplot.get_yticklabels()):
         item.set_fontsize(15)
+    df.boxplot(column=m, ax=ax_boxplot, by="fitness_function")
+    plt.show()
     boxplot_fig.savefig((new_dirname + '/boxplot_'+m + "_" + exp_name +".pdf"))
 
-    ax.boxplot(boxd, labels=labels, autorange=True)
+    #ax.boxplot(boxd, labels=labels, autorange=True)
     # axarr[coord,0].set_title(m)
     #if coord==0: axarr[coord,0].legend()
 
+    """
     y_max = np.max(np.concatenate((boxd[0],boxd[1])))
     y_min = np.min(np.concatenate((boxd[0],boxd[1])))
     ax.annotate("", xy=(1, y_max), xycoords='data',xytext=(2, y_max), textcoords='data',arrowprops=dict(arrowstyle="-", ec='#aaaaaa',connectionstyle="bar,fraction=0.1"))
     ax.text(1.5, y_max + abs(y_max - y_min)*0.2, stars(p),horizontalalignment='center',verticalalignment='center')
 
     coord +=1
+    """
 
 #set titles to the left
+
+"""
 for ax, row in zip(axarr[:,0], measures):
     ax.set_ylabel(row, rotation='vertical', size='medium')
 
@@ -180,3 +207,4 @@ f.subplots_adjust(hspace=0.8)
 #plt.show()
 f.set_size_inches(8,16) #arbitrary paper size
 plt.savefig((new_dirname + "/measures_hist_box_"+ exp_name +".pdf"))
+"""
