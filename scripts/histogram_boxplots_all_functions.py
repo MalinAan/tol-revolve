@@ -104,6 +104,11 @@ os.mkdir((path + "/" + new_dirname))
 f, axarr = plt.subplots(len(measures),2)
 nbins=30
 coord=0
+
+environments = ["world0", "world1","world2","world3","world4"]
+
+for env in environments:
+    os.mkdir((path + "/" + new_dirname + "/" + env))
 for m in measures: #one plot for each measure
 
 
@@ -172,3 +177,22 @@ for m in measures: #one plot for each measure
     plt.xticks(range(1, (len(labels) + 1)), labels)
     #plt.show()
     boxplot_fig.savefig((new_dirname + '/boxplot_'+m + "_" + exp_name +".pdf"))
+
+
+    #environments = ["world0", "world1","world2","world3","world4"]
+
+    for env in environments:
+        world_df = df.loc[df['world'] == env]
+        boxplot_fig_world = plt.figure(figsize=(14, 10))
+
+        ax_boxplot_world = boxplot_fig_world.add_subplot(1,1,1)
+
+
+        world_df.boxplot(column=m, ax=ax_boxplot_world, by="fitness_function", fontsize=15)
+
+        boxplot_fig_world.suptitle(('Boxplot for ' + m + " for environment " + str((int(env[5]) + 1))))
+        plt.title("")
+        plt.xlabel("")
+        plt.xticks(range(1, (len(labels) + 1)), labels)
+        #plt.show()
+        boxplot_fig_world.savefig((new_dirname + "/" + env + '/boxplot_'+m + "_" + exp_name + ".pdf"))
